@@ -1,0 +1,18 @@
+{
+  "name": "todo_app",
+  "version": "1.0.0",
+  "description": "A todo app for everyone",
+  "main": "app.js",
+  "author": "Ayan Banerjee",
+  "license": "MIT",
+  "private": null,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.12.1"
+  }
+}
