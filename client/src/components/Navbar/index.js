@@ -18,16 +18,6 @@ class Navbar extends Component {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
-              <div className="nav-link text-light" href="#">
-                Create
-              </div>
-            </li>
-          </ul>
-        </div>
       </nav>
     );
   }
