@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
     return (
       <nav className="navbar fixed-top navbar-expand-md navbar-light bg-danger">
-        <div className="navbar-brand text-light" href="#">
+        <Link to="/dashboard" className="navbar-brand text-light">
           React Todo App
-        </div>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchTodo, fetchBuckets } from "../../actions";
 import axios from "axios";
+import "./todoEdit.css";
 
 class TodoEdit extends Component {
   constructor(props) {
@@ -56,62 +57,64 @@ class TodoEdit extends Component {
       <div className="my-5">
         <div className="container my-5">
           <div className="row">
-            <div className="col-md">
-              <button className="btn btn-primary" onClick={() => this.setState({ edit: !this.state.edit })}>
-                Edit/View
-              </button>
-            </div>
-            {this.state.edit ? (
+            <div className="form form-card">
               <div className="col-md">
-                <form onSubmit={() => console.log("Hello")}>
+                <button className="btn btn-primary btn-custom" onClick={() => this.setState({ edit: !this.state.edit })}>
+                  {!this.state.edit ? "Edit" : "View"}
+                </button>
+              </div>
+              {this.state.edit ? (
+                <div className="col-md todoView">
+                  <form onSubmit={() => console.log("Hello")}>
+                    <div className="form-group">
+                      <label htmlFor="name">Todo</label>
+                      <input type="text" id="name" value={name} placeholder="Enter Name" onChange={e => this.setState({ name: e.target.value })} />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="status">Status</label>
+                      <select name="status" id="status" value={status} onChange={e => this.setState({ status: e.target.value })}>
+                        <option defaultValue disabled>
+                          Select Status
+                        </option>
+                        <option value="completed">completed</option>
+                        <option value="pending">pending</option>
+                      </select>{" "}
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="Bucket">Bucket</label>
+                      <select name="status" id="status" value={bucket} onChange={e => this.setState({ bucket: e.target.value })}>
+                        <option defaultValue disabled>
+                          Select Bucket
+                        </option>
+                        {buckets.map(e => (
+                          <option key={e.id} value={e.name}>
+                            {e.name}
+                          </option>
+                        ))}
+                      </select>{" "}
+                    </div>
+                    <button type="submit" onClick={this.handleSubmit}>
+                      Send
+                    </button>
+                  </form>
+                </div>
+              ) : (
+                <div className="col-md">
                   <div className="form-group">
                     <label htmlFor="name">Todo</label>
-                    <input type="text" id="name" value={name} placeholder="Enter Name" onChange={e => this.setState({ name: e.target.value })} />
+                    <p>{name}</p>
                   </div>
                   <div className="form-group">
                     <label htmlFor="status">Status</label>
-                    <select name="status" id="status" value={status} onChange={e => this.setState({ status: e.target.value })}>
-                      <option defaultValue disabled>
-                        Select Status
-                      </option>
-                      <option value="completed">completed</option>
-                      <option value="pending">pending</option>
-                    </select>{" "}
+                    <p>{status}</p>
                   </div>
                   <div className="form-group">
                     <label htmlFor="Bucket">Bucket</label>
-                    <select name="status" id="status" value={bucket} onChange={e => this.setState({ bucket: e.target.value })}>
-                      <option defaultValue disabled>
-                        Select Bucket
-                      </option>
-                      {buckets.map(e => (
-                        <option key={e.id} value={e.name}>
-                          {e.name}
-                        </option>
-                      ))}
-                    </select>{" "}
+                    <p>{bucket}</p>
                   </div>
-                  <button type="submit" onClick={this.handleSubmit}>
-                    Send
-                  </button>
-                </form>
-              </div>
-            ) : (
-              <div className="col-md">
-                <div className="form-group">
-                  <label htmlFor="name">Todo</label>
-                  <p>{name}</p>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="status">Status</label>
-                  <p>{status}</p>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Bucket">Bucket</label>
-                  {bucket}
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
