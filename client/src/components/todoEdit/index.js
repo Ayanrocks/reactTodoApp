@@ -50,7 +50,13 @@ class TodoEdit extends Component {
     });
   };
 
-  componentDidUpdate() {}
+  handleDelete = () => {
+    const id = this.props.match.params.id;
+
+    axios.delete(`/todos/${id}/delete`);
+    this.props.history.push("/dashboard");
+  };
+
   render() {
     const { name, bucket, status, buckets } = this.state;
     return (
@@ -60,12 +66,15 @@ class TodoEdit extends Component {
             <div className="form form-card">
               <div className="col-md">
                 <button className="btn btn-primary btn-custom" onClick={() => this.setState({ edit: !this.state.edit })}>
-                  {!this.state.edit ? "Edit" : "View"}
+                  {!this.state.edit ? <span className="fa fa-pencil"></span> : <span className="fa fa-eye"></span>}
+                </button>
+                <button className="btn btn-danger btn-custom" onClick={this.handleDelete}>
+                  <span className="fa fa-trash"></span>
                 </button>
               </div>
               {this.state.edit ? (
                 <div className="col-md todoView">
-                  <form onSubmit={() => console.log("Hello")}>
+                  <form>
                     <div className="form-group">
                       <label htmlFor="name">Todo</label>
                       <input type="text" id="name" value={name} placeholder="Enter Name" onChange={e => this.setState({ name: e.target.value })} />

@@ -11,14 +11,15 @@ module.exports = app => {
       }
     });
   });
-  
 
   // Create a new todo
-  app.post("/todos/create", (req, res) => {
-    const todo = [req.body.name, req.body.status, req.body.bucket];
+  app.post("/todos/create", async (req, res) => {
+    let bucket = await client.query("SELECT id FROM buckets WHERE name = $1", [req.body.bucket]);
+    bucket = bucket.rows[0].id;
+    const todo = [req.body.name, req.body.status, bucket];
     client.query("INSERT INTO todos (name, status, bucket) VALUES ($1,$2,$3)", todo, (err, data) => {
       if (err) {
-        res.json({ error: "Error Creating" });
+        res.status(500).json({ error: "Error Creating", msg: err });
       } else {
         res.sendStatus(200);
       }

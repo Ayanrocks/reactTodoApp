@@ -11,8 +11,8 @@ CREATE TABLE buckets
 CREATE TABLE todos
 (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(20),
-    status VARCHAR(20),
+    name VARCHAR(30),
+    status VARCHAR(15),
     bucket INT,
     created TIMESTAMP DEFAULT now(),
     FOREIGN KEY (bucket) REFERENCES buckets(id)

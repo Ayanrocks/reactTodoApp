@@ -5,7 +5,7 @@
   "main": "app.js",
   "author": "Ayan Banerjee",
   "license": "MIT",
-  "private": null,
+  "private": false,
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
