@@ -5,7 +5,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar fixed-top navbar-expand-md navbar-light bg-danger">
-        <Link to="/dashboard" className="navbar-brand text-light">
+        <Link to="/" className="navbar-brand text-light">
           React Todo App
         </Link>
         <button

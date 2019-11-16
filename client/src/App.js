@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import todoEdit from "./components/todoEdit";
@@ -12,6 +12,9 @@ class App extends Component {
         <Switch>
           <Route path="/dashboard" component={Home} />
           <Route path="/todo/:id" component={todoEdit} />
+          <Route path="*" exact={true}>
+            <Redirect to="/" />
+          </Route>
         </Switch>
         <Navbar />
       </Router>

@@ -54,7 +54,7 @@ class TodoEdit extends Component {
     const id = this.props.match.params.id;
 
     axios.delete(`/todos/${id}/delete`);
-    this.props.history.push("/dashboard");
+    this.props.history.push("/");
   };
 
   render() {

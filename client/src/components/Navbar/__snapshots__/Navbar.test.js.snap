@@ -6,7 +6,7 @@ exports[`Navbar renders correctly 1`] = `
 >
   <a
     className="navbar-brand text-light"
-    href="/dashboard"
+    href="/"
     onClick={[Function]}
   >
     React Todo App
