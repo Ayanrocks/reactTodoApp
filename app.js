@@ -1,10 +1,12 @@
-const app = require("express")();
+const express = require("express");
+const app = express();
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 require("./database/connection");
-app.use(morgan("dev"));
 
+app.use(morgan("dev"));
+app.use(express.static("client/build"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

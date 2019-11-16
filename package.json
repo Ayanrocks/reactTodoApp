@@ -4,6 +4,9 @@
   "description": "A todo app for everyone",
   "main": "app.js",
   "author": "Ayan Banerjee",
+  "scripts": {
+    "start": "node app.js"
+  },
   "license": "MIT",
   "private": false,
   "dependencies": {

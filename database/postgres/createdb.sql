@@ -1,6 +1,10 @@
 BEGIN TRANSACTION;
 
+CREATE DATABASE todoApi;
+CREATE USER ayanrocks
+WITH PASSWORD='1234';
+GRANT CONNECT ON DATABASE todoApi TO ayanrocks;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO ayanrocks;
 \i '/docker-entrypoint-initdb.d/tables.sql'
-\i '/docker-entrypoint-initdb.d/insert.sql'
 
 COMMIT;
