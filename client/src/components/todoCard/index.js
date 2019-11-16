@@ -9,11 +9,8 @@ const TodoCard = ({ todo }) => {
       </div>
       <div className="card-body">
         <h5 className="card-title">{todo.name}</h5>
-        <Link to={`/todo/${todo.id}`} className="btn btn-primary" style={{ margin: 10 + "px" }}>
-          View
-        </Link>
-        <Link to={`/todo/${todo.id}/edit`} className="btn btn-success">
-          Edit{" "}
+        <Link to={`/todo/${todo.id}`} className="btn btn-success">
+          View{" "}
         </Link>
         <Link to={`/todo/${todo.id}/delete`} className="btn btn-danger">
           Delete{" "}

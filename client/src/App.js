@@ -12,7 +12,7 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route path="/dashboard" component={Home} />
-          <Route path="/todo/:id/edit" component={todoEdit} />
+          <Route path="/todo/:id" component={todoEdit} />
         </Switch>
       </Router>
     );
