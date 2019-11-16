@@ -7,7 +7,8 @@ import axios from "axios";
 import Modal from "react-modal";
 import "./home.css";
 
-Modal.setAppElement("#root");
+
+Modal.setAppElement(document.getElementById("root"));
 
 const customStyles = {
   content: {
@@ -61,14 +62,15 @@ class Home extends Component {
   handleTodoSubmit = e => {
     e.preventDefault();
     const { todoName, todoStatus, todoBucket } = this.state;
-
-    axios.post("/todos/create", {
-      name: todoName,
-      status: todoStatus,
-      bucket: todoBucket
-    });
-    this.closeTodoModal();
-    this.fetchContent();
+    if (todoName && todoStatus && todoBucket) {
+      axios.post("/todos/create", {
+        name: todoName,
+        status: todoStatus,
+        bucket: todoBucket
+      });
+      this.closeTodoModal();
+      this.fetchContent();
+    }
   };
 
   handleDelete = async id => {
@@ -108,7 +110,7 @@ class Home extends Component {
                     <div className="form-group">
                       <label htmlFor="status">Status</label>
                       <select name="status" id="status" value={todoStatus} onChange={e => this.setState({ todoStatus: e.target.value })}>
-                        <option defaultValue disabled>
+                        <option value="" defaultValue disabled>
                           Select Status
                         </option>
                         <option value="completed">completed</option>

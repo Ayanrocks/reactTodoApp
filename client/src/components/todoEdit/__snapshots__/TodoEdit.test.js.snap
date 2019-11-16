@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoEdit renders correctly 1`] = `
+<div
+  className="my-5"
+>
+  <div
+    className="container my-5"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="form form-card"
+      >
+        <div
+          className="col-md"
+        >
+          <button
+            className="btn btn-primary btn-custom"
+            onClick={[Function]}
+          >
+            <span
+              className="fa fa-pencil"
+            />
+          </button>
+          <button
+            className="btn btn-danger btn-custom"
+            onClick={[Function]}
+          >
+            <span
+              className="fa fa-trash"
+            />
+          </button>
+        </div>
+        <div
+          className="col-md"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="name"
+            >
+              Todo
+            </label>
+            <p>
+              
+            </p>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="status"
+            >
+              Status
+            </label>
+            <p>
+              
+            </p>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="Bucket"
+            >
+              Bucket
+            </label>
+            <p>
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<div>
+  <div
+    className="container mt-5"
+  >
+    <div
+      className="row"
+    />
+  </div>
+  <nav
+    className="fab-container undefined"
+  >
+    <button
+      className="fab-item undefined "
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#f44336",
+          "border": "none",
+          "color": "#fafafa",
+          "textDecoration": "none",
+        }
+      }
+      tooltip="Create Todo"
+    >
+      <i
+        className="fa fa-sticky-note"
+      />
+    </button>
+    <button
+      className="fab-item undefined "
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#f44336",
+          "border": "none",
+          "color": "#fafafa",
+          "textDecoration": "none",
+        }
+      }
+      tooltip="Create Bucket"
+    >
+      <i
+        className="fa fa-beer"
+      />
+    </button>
+    <button
+      className="fab-item undefined fab-rotate"
+      style={
+        Object {
+          "backgroundColor": "#f44336",
+          "border": "none",
+          "color": "#fafafa",
+          "textDecoration": "none",
+        }
+      }
+      tooltip="Add"
+    >
+      <i
+        className="fa fa-plus"
+      />
+    </button>
+  </nav>
+</div>
+`;

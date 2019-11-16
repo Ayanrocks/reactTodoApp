@@ -17,4 +17,10 @@ CREATE TABLE todos
     created TIMESTAMP DEFAULT now(),
     FOREIGN KEY (bucket) REFERENCES buckets(id)
 );
+
+INSERT INTO buckets
+    (name)
+VALUES
+    ("default");
+
 COMMIT;

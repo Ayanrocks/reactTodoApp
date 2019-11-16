@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoCard renders correctly 1`] = `
+<div
+  className="card shadow card-shadow my-5 mx-3"
+  style={
+    Object {
+      "width": "15rem",
+    }
+  }
+>
+  <div
+    className="card-body"
+  >
+    <h5
+      className="card-title"
+    >
+      Hello Todo
+    </h5>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-around",
+        }
+      }
+    >
+      <a
+        className="btn btn-success"
+        href="/todo/1"
+        onClick={[Function]}
+      >
+        <span
+          className="fa fa-eye"
+        />
+      </a>
+      <button
+        className="btn btn-danger"
+        onClick={[Function]}
+      >
+        <span
+          className="fa fa-trash"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;

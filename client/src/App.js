@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import todoEdit from "./components/todoEdit";
-import "./App.css"
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Navbar />
         <Switch>
           <Route path="/dashboard" component={Home} />
           <Route path="/todo/:id" component={todoEdit} />
         </Switch>
+        <Navbar />
       </Router>
     );
   }
