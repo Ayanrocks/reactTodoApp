@@ -8,9 +8,9 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_TODOS:
-      return { ...state, todos: [action.payload] };
+      return { ...state, todos: action.payload };
     case FETCH_BUCKETS:
-      return { ...state, buckets: [action.payload] };
+      return { ...state, buckets: action.payload };
     default:
       return state;
   }

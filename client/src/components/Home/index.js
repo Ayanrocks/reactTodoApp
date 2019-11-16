@@ -13,7 +13,7 @@ class Home extends Component {
   async componentDidMount() {
     await this.props.fetchTodo();
     console.log(this.props);
-    this.setState({ todos: this.props.todos[0] });
+    this.setState({ todos: this.props.todos });
   }
   render() {
     return (

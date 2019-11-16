@@ -5,7 +5,7 @@ module.exports = app => {
   app.get("/todos/", (req, res) => {
     client.query("SELECT * FROM todos", (err, data) => {
       if (err) {
-        res.JSON({ error: "Error Showing" });
+        res.json({ error: "Error Showing" });
       } else {
         res.send(data.rows);
       }
@@ -18,7 +18,7 @@ module.exports = app => {
     const todo = [req.body.name, req.body.status, req.body.bucket];
     client.query("INSERT INTO todos (name, status, bucket) VALUES ($1,$2,$3)", todo, (err, data) => {
       if (err) {
-        res.JSON({ error: "Error Creating" });
+        res.json({ error: "Error Creating" });
       } else {
         res.sendStatus(200);
       }
@@ -31,7 +31,7 @@ module.exports = app => {
     console.log(todo);
     client.query("UPDATE todos SET name = $1, status = $2 WHERE id = $3;", todo, (err, data) => {
       if (err) {
-        res.JSON({ error: "Error Inserting" });
+        res.json({ error: "Error Inserting" });
       } else {
         res.sendStatus(200);
       }
@@ -42,7 +42,7 @@ module.exports = app => {
   app.delete("/todos/:id/delete", (req, res) => {
     client.query("DELETE FROM todos WHERE id = $1", [req.params.id], (err, data) => {
       if (err) {
-        res.JSON({ error: "Error Deleting" });
+        res.json({ error: "Error Deleting" });
       } else {
         res.sendStatus(200);
       }

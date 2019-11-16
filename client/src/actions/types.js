@@ -6,3 +6,4 @@ export const DELETE_TODO = "DELETE_TODO";
 export const CREATE_BUCKET = "CREATE_BUCKET";
 export const EDIT_BUCKET = "EDIT_BUCKET";
 export const DELETE_BUCKET = "DELETE_BUCKET";
+export const FETCH_BUCKET = "FETCH_BUCKET";
