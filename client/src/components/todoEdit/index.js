@@ -29,11 +29,10 @@ class TodoEdit extends Component {
     }
     const bucket = this.props.buckets.filter(e => bucketID === e.id);
 
-    this.setState({ bucket: bucket[0].name }, () => console.log(this.state));
+    this.setState({ bucket: bucket[0].name });
   }
 
   async componentDidMount() {
-    console.log(this.props);
     await this.props.fetchTodo();
     await this.props.fetchBuckets();
     this.setState({ buckets: this.props.buckets });
@@ -95,7 +94,7 @@ class TodoEdit extends Component {
                         <option defaultValue disabled>
                           Select Bucket
                         </option>
-                        {buckets.map(e => (
+                        {bucket.length > 0 && buckets.map(e => (
                           <option key={e.id} value={e.name}>
                             {e.name}
                           </option>

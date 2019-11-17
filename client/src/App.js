@@ -10,11 +10,8 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/dashboard" component={Home} />
+          <Route path="/" component={Home} />
           <Route path="/todo/:id" component={todoEdit} />
-          <Route path="*" exact={true}>
-            <Redirect to="/" />
-          </Route>
         </Switch>
         <Navbar />
       </Router>
