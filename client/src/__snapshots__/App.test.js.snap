@@ -1,28 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders correctly 1`] = `
-<nav
-  className="navbar fixed-top navbar-expand-md navbar-light bg-danger"
->
-  <a
-    className="navbar-brand text-light"
-    href="/"
-    onClick={[Function]}
+Array [
+  <div>
+    <div
+      className="container mt-5"
+    >
+      <div
+        className="row"
+      />
+    </div>
+    <nav
+      className="fab-container undefined"
+    >
+      <button
+        className="fab-item undefined "
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#f44336",
+            "border": "none",
+            "color": "#fafafa",
+            "textDecoration": "none",
+          }
+        }
+        tooltip="Create Todo"
+      >
+        <i
+          className="fa fa-sticky-note"
+        />
+      </button>
+      <button
+        className="fab-item undefined "
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#f44336",
+            "border": "none",
+            "color": "#fafafa",
+            "textDecoration": "none",
+          }
+        }
+        tooltip="Create Bucket"
+      >
+        <i
+          className="fa fa-beer"
+        />
+      </button>
+      <button
+        className="fab-item undefined fab-rotate"
+        style={
+          Object {
+            "backgroundColor": "#f44336",
+            "border": "none",
+            "color": "#fafafa",
+            "textDecoration": "none",
+          }
+        }
+        tooltip="Add"
+      >
+        <i
+          className="fa fa-plus"
+        />
+      </button>
+    </nav>
+  </div>,
+  <nav
+    className="navbar fixed-top navbar-expand-md navbar-light bg-danger"
   >
-    React Todo App
-  </a>
-  <button
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    className="navbar-toggler"
-    data-target="#navbarNav"
-    data-toggle="collapse"
-    type="button"
-  >
-    <span
-      className="navbar-toggler-icon"
-    />
-  </button>
-</nav>
+    <a
+      className="navbar-brand text-light"
+      href="/"
+      onClick={[Function]}
+    >
+      React Todo App
+    </a>
+    <button
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-target="#navbarNav"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+  </nav>,
+]
 `;

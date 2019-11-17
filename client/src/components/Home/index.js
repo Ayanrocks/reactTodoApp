@@ -7,7 +7,6 @@ import axios from "axios";
 import Modal from "react-modal";
 import "./home.css";
 
-
 Modal.setAppElement(document.getElementById("root"));
 
 const customStyles = {
@@ -81,22 +80,25 @@ class Home extends Component {
   handleBucketSubmit = e => {
     const { bucketName } = this.state;
     e.preventDefault();
-    axios.post("/buckets/create", {
-      name: bucketName
-    });
+    if (bucketName) {
+      axios.post("/buckets/create", {
+        name: bucketName
+      });
 
-    this.closeBucketModal();
-    this.fetchContent();
+      this.closeBucketModal();
+      this.fetchContent();
+    }
   };
 
   render() {
-    const { todoName, todoStatus, todoBucket, buckets, bucketName } = this.state;
+    const { todos, todoName, todoStatus, todoBucket, buckets, bucketName } = this.state;
     return (
       <div>
         <div className="container mt-5">
           <div className="row">
-            {this.state.todos &&
-              this.state.todos.map((todo, i) => {
+            {todos &&
+              todos.length > 0 &&
+              todos.map((todo, i) => {
                 return <TodoCard key={i} todo={todo} handleDelete={this.handleDelete} />;
               })}
             {this.state.todoModal && (
@@ -123,11 +125,12 @@ class Home extends Component {
                         <option defaultValue disabled>
                           Select Bucket
                         </option>
-                        {buckets.map(e => (
-                          <option key={e.id} value={e.name}>
-                            {e.name}
-                          </option>
-                        ))}
+                        {buckets.length > 0 &&
+                          buckets.map(e => (
+                            <option key={e.id} value={e.name}>
+                              {e.name}
+                            </option>
+                          ))}
                       </select>{" "}
                     </div>
                     <button type="submit" onClick={this.handleTodoSubmit}>
