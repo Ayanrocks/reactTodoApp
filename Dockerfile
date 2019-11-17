@@ -8,10 +8,10 @@ RUN npm install
 
 COPY . .
 
-RUN npm audit fix
+# RUN npm audit fix
 
-RUN cd client && yarn build
+RUN cd client && yarn build && cd ..
 
-RUN npm i -g nodemon
+# RUN npm i -g nodemon
 
-CMD ["nodemon", "app.js"]
+CMD ["node", "app.js"]

@@ -21,6 +21,6 @@ CREATE TABLE todos
 INSERT INTO buckets
     (name)
 VALUES
-    ("default");
+    ('default');
 
 COMMIT;
